@@ -1,0 +1,81 @@
+
+
+.caixa {
+	padding: 50px 0;
+	border-bottom: 1px solid rgba(156, 255, 255, 1);
+}
+
+.bg-warning {
+	background-color: rgba(156, 255, 255, 0.9) !important;
+}
+
+
+.text-primary {
+	color: rgba(156, 255, 255, 1) !important;
+}
+
+.table-primary {
+	background-color: rgba(156, 255, 255, 0.9) !important;
+}
+
+.border-primary {
+	border-color: rgba(156, 255, 255, 0.9) !important;
+}
+
+
+/*----------LOGIN---------*/
+
+.formLogin {
+	height: 470px;
+	margin-top: 100px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+img#imgLogin {
+	height: 470px;
+	margin-top: 100px;
+	width: 660px;
+	opacity: 0.9;
+}
+
+
+input {
+	width: 300px;
+}
+
+.fundo2 {
+	background-color: rgba(156, 255, 255, 0.2) !important;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.fundo {
+	background-color: rgba(156, 255, 255, 0.2) !important;
+
+}
+
+
+.verde {
+border: 1px solid green;
+border-radius: 5px;
+}
+
+.vermelho {
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+
+.borda {
+	border: 1px solid black;
+	opacity: 0.3;
+}
+
+
+
+
+
+
+
+
+

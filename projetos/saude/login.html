@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Login</title>
+	<style type="text/css"></style>
+ 	<!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   	<!-- Estilo customizado -->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<!-- normalize css -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<!--Icones -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--fontawesome -->
+    <script src="https://kit.fontawesome.com/eb35fabd7b.js" crossorigin="anonymous"></script>
+
+	<!--[if lt IE 9]>
+		<script src="sha512-UDJtJXfzfsiPPgnI5S1000FPLBHMhvzAMX15I+qG2E2OAzC9P1JzUwJOfnypXiOH7MRPaqzhPbBGDNNj7zBfoA=="></script>
+	<![endif]-->
+
+
+		<script>		
+			 function recuperaCaracter0(){
+
+            //selecionar o valor digitado
+            caracter = document.getElementById('manipulacao0').value.length
+            
+            //verificação da seleção do(s) caractere(s)
+            console.log (caracter)
+
+            //lógica para mudar o background
+            if (caracter < 5) {
+                document.getElementById('manipulacao0').className = 'vermelho'
+                
+            }
+            else {
+                document.getElementById('manipulacao0').className = 'verde'
+                
+            }
+
+        }
+
+	function login(){
+
+	manipulacao0 = document.getElementById('manipulacao0').value;
+	manipulacao1 = document.getElementById('manipulacao1').value;
+	
+	if (manipulacao0 == '' || manipulacao1 == '') {
+			alert('Preencha corretamente os campos de login e senha!');
+			document.getElementById('manipulacao0').className = ''
+			document.getElementById('manipulacao1').className = ''
+
+	} else if (manipulacao0 == 'Lucas' && manipulacao1 == '123456') {
+		alert('Login realizado com sucesso. Bem vindo Lucas!')
+		document.getElementById('manipulacao0').value = ''
+		document.getElementById('manipulacao1').value = ''
+		document.getElementById('manipulacao0').className = ''
+		document.getElementById('manipulacao1').className = ''
+		}
+
+		else {
+		      alert('Login ou senha incorretos')
+			document.getElementById('manipulacao1').value = ''
+			document.getElementById('manipulacao0').className = ''
+			document.getElementById('manipulacao1').className = ''
+			}			
+	}
+
+			
+			 function recuperaCaracter1(){
+            //selecionar o valor digitado
+            caracter = document.getElementById('manipulacao1').value.length
+            
+            //verificação da seleção do(s) caractere(s)
+            console.log (caracter)
+
+            //lógica para mudar o background
+            if (caracter < 5) {
+                document.getElementById('manipulacao1').className = 'vermelho'
+                
+            }
+            else {
+                document.getElementById('manipulacao1').className = 'verde'
+                
+            }
+
+        }
+		</script>
+		
+</head>
+
+<body class="text-dark fundo">
+
+<div class="container"> <!-- início container -->
+	<div class="row justify-content-center"><!-- início row -->
+
+		<!--  <div class="col-lg-7 d-none d-lg-block">
+			
+			<img id="imgLogin" class=" shadow-lg p-3 mb-5 bg-white rounded" src="https://guiadafarmacia.com.br/wp-content/uploads/2021/02/balanca-imc.jpg"> 
+
+		</div>-->
+
+
+	<div class="formLogin col-10 col-sm-10 col-md-8 col-lg-6 col-xl-5 shadow-lg p-3 mb-5 bg-white rounded">
+			<div class="iconesRedes">
+			<a href="https://www.instagram.com/luuskaaa10/" target="_blank">
+			<i class="fa-brands fa-instagram fa-2x mr-1 " style="color: #000000;"></i>
+			</a>
+
+			<a href="https://github.com/SilvaSantos10" target="_blank">
+			<i class="fa-brands fa-github fa-2x mr-1" style="color: #000000;"></i>
+			</a>
+
+			<a href="https://www.linkedin.com/in/lucas-santos-7a154225b/" target="_blank">
+			<i class="fa-brands fa-linkedin fa-2x" style="color: #000000;"></i>
+			</a>
+			</div>
+
+			<span class="row justify-content-center pt-2"><i class="fa-solid fa-user fa-5x" style="color: #000000;"></i></span>
+	<form>
+			<div class="input-group input-group-lg mb-3 mt-4 justify-content-center">
+  			<div class="input-group-prepend">
+    			<span class="input-group-text fundo2 "><i class="fa-solid fa-user" style="color: #000000;"></i></span>
+  			</div>
+ 				 <input id="manipulacao0" onblur="recuperaCaracter0()" class=" rounded borda" type="text" placeholder="Digite seu usuário...">
+			</div>
+
+			<div class="input-group input-group-lg mb-3 justify-content-center">
+  			<div class="input-group-prepend">
+    			<span class="input-group-text fundo2 "><i class="fa-solid fa-key" style="color: #000000;"></i></span>
+  		</div>
+  			<input id="manipulacao1" class="rounded borda" onblur="recuperaCaracter1()"  type="password" placeholder="Digite sua senha...">
+			</div>
+			<div class="row justify-content-center">
+				<button type="button" onclick="login()" class="btn btn-success btn-lg">Login</button>
+			</div>
+			<div class="row justify-content-center shadow-lg p-3 mb-5 fundo2 rounded mt-4 ml-4 mr-4"><a href="" class="mr-2"> <span class="text-dark"> Esqueceu sua senha?</span></a> / <a class="ml-2" href=""> <span class="text-dark"> Cadastre-se </span></a></div>
+	</form>
+	</div>
+
+	</div> <!-- fim row -->
+</div> <!-- fim container -->				
+</body>
+</html>

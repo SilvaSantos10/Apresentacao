@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Saude</title>
+	<style type="text/css"></style>
+ 	<!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   	<!-- Estilo customizado -->
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<!-- normalize css -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<!--Icones -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--fontawesome -->
+    <script src="https://kit.fontawesome.com/eb35fabd7b.js" crossorigin="anonymous"></script>
+
+	<!--[if lt IE 9]>
+		<script src="sha512-UDJtJXfzfsiPPgnI5S1000FPLBHMhvzAMX15I+qG2E2OAzC9P1JzUwJOfnypXiOH7MRPaqzhPbBGDNNj7zBfoA=="></script>
+	<![endif]-->
+		<style>
+			.resultado1 {
+				color: rgb(255, 0, 0);
+				padding: 10px 10px;
+				width: 270px;
+				height: 30px;
+			}
+
+
+
+			.estiloPerigo{
+				background-color: rgba(255, 0, 0, 0.4);
+
+			}
+
+			.estiloOk{
+			background-color: rgba(0, 255, 0, 0.4);
+			}
+
+			.estiloAtencao{
+				background-color: rgba(255, 255, 0, 0.4);
+			}
+		</style>
+
+					<script>
+
+						//upperCase para o nome do input
+					function upperCase() {
+  				x = document.getElementById('nome');
+ 					 x.value = x.value.toUpperCase();
+ 					}
+
+ 					campo = document.getElementById("nome");
+
+						campo.addEventListener("input", function() {
+						  if (this.value.length > 12) {
+						    this.value = this.value.slice(0, 10); // limita o comprimento do texto
+						  }
+						});
+
+		function calcularIMC() {
+			 nome = document.getElementById("nome").value;
+			 peso = parseFloat(document.getElementById("peso").value);
+			 altura = parseFloat(document.getElementById("altura").value);
+
+			if (isNaN(peso) || nome == '' || isNaN(altura)) {
+				alert("Preencha corretamente os campos de peso, nome e altura!");
+			} else {
+
+				altura = altura / 100;
+				imc = peso / (altura * altura);
+				document.getElementById("resultado").value = nome + ', seu IMC é: ' + imc.toFixed(2);
+				//console.log(imc)
+
+
+				if (imc < 18.5) {
+					document.getElementById("linha1").className = 'estiloPerigo'
+					document.getElementById("linha2").className = 'estiloPerigo'
+					document.getElementById("linha3").className = 'estiloPerigo'
+				} else if (imc >= 18.5 && imc <= 24.9) {
+					document.getElementById("linha4").className = 'estiloOk'
+					document.getElementById("linha5").className = 'estiloOk'
+					document.getElementById("linha6").className = 'estiloOk'
+				} else if (imc >= 25.0 && imc <= 29.9) {
+					document.getElementById("linha7").className = 'estiloAtencao'
+					document.getElementById("linha8").className = 'estiloAtencao'
+					document.getElementById("linha9").className = 'estiloAtencao'
+				} else if (imc >= 30.0 && imc <= 39.9) {
+					document.getElementById("linha10").className = 'estiloPerigo'
+					document.getElementById("linha11").className = 'estiloPerigo' 
+					document.getElementById("linha12").className = 'estiloPerigo'  
+				} else {
+					document.getElementById("linha13").className = 'estiloPerigo'
+					document.getElementById("linha14").className = 'estiloPerigo'
+					document.getElementById("linha15").className = 'estiloPerigo'
+				}
+			}
+		}
+
+		function limpaCampos(){
+
+					document.getElementById("nome").value = ''
+					document.getElementById("resultado").value = ''
+					document.getElementById("altura").value = ''
+					document.getElementById("peso").value = ''
+					document.getElementById("linha1").className = ''
+					document.getElementById("linha2").className = ''
+					document.getElementById("linha3").className = ''
+					document.getElementById("linha4").className = ''
+					document.getElementById("linha5").className = ''
+					document.getElementById("linha6").className = ''
+					document.getElementById("linha7").className = ''
+					document.getElementById("linha8").className = ''
+					document.getElementById("linha9").className = ''
+					document.getElementById("linha10").className = ''
+					document.getElementById("linha11").className = ''
+					document.getElementById("linha12").className = ''
+					document.getElementById("linha13").className = ''
+					document.getElementById("linha14").className = ''
+					document.getElementById("linha15").className = ''
+			
+
+		}
+
+
+
+	</script>
+
+</head>
+
+<body class="bg-withe text-dark">
+
+		<header> <!-- início navegação -->
+
+	 <nav class="navbar fixed-top navbar-expand-sm navbar-warning bg-warning navbar-light">
+        <div class="container"> <!-- início container -->
+        <a href="" class="navbar-brand">LUCAS</a>
+
+      <!-- MENU HAMBURGUER -->
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-target">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- NAVEGAÇÃO -->
+         <div class="collapse navbar-collapse" id="nav-target">
+            <ul class="navbar-nav ml-auto">  
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link pt-3 mr-5">Início</a>
+              </li>
+              <!--<li class="nav-item ">
+                <a href="contato.html" class="nav-link pt-3 mr-5">Contatos</a>
+              </li> -->
+              
+              <li class="nav-item p-2">
+              	<a href="login.html">
+                <button type="button" class="btn btn btn-success">Entrar</button>
+                </a>
+              </li>
+            </ul>
+         </div>
+         </div> <!-- fim container -->
+        </nav> 
+		</header> <!-- fim navegação -->
+		
+		<section>
+		<div class="col-md-12 col-lg-12 col-xl-12 pt-5">
+		<h2 class="display-5 d-flex justify-content-center pt-5"> Quer saber como anda o seu IMC? Faça o teste agora!</h2>
+		<!-- <a class="d-flex justify-content-center" href="https://www.prefeitura.sp.gov.br/cidade/secretarias/saude/noticias/?p=332991">Clique aqui para saber o que é IMC</a> -->
+		</div>
+		</section>
+
+
+		<div class="container"> <!-- inicio container -->
+
+		<div class="row d-flex justify-content-center pb-5">
+
+		<form class="col-md-10 col-lg-10 col-xl-10 pt-3"> <!-- inicio form -->
+			
+			<div class="form-group">
+   				<label for="nome">Digite o seu primeiro nome: </label>
+   				<input type="text" maxlength="12" class="form-control" pattern="[a-zA-Z]+" title="Este campo só permite letras" id="nome" onchange="upperCase()" placeholder="Digite o seu primeiro nome...">
+  			</div>
+  			<div class="form-group">
+    				<label for="peso">Digite o seu peso: </label>
+   				<input type="number" class="form-control" id="peso" aria-describedby="" placeholder="Digite o seu peso...">
+  			</div>
+
+  			<div class="form-group">
+   				<label for="altura">Digite a sua altura em cm: </label>
+   				<input type="number" class="form-control" id="altura" placeholder="Digite a sua altura em cm... ">
+  			</div>
+  				<button type="button" class="btn btn-success mb-1" id="calcular" onclick="calcularIMC()">Calcular</button>
+  				<button type="button" class="btn btn-danger mb-1" id="limpar" onclick="limpaCampos()">Limpar</button> 
+
+  				<input class="resultado1 border border-primary bg-warning rounded ml-2" type="text" name="" id="resultado" disabled="disabled">
+  				
+		</form> <!-- fim form -->
+
+	</div>
+	
+	<table class="col-md-12 col-lg-12 col-xl-12 justify-content-center table table-bordered table-hover">
+		<tr>
+			<th class="table-primary">IMC</th>
+			<th class="table-primary">Classificação</th>
+			<th class="table-primary">OBESIDADE (GRAU)</th>
+		</tr>
+		<tr>
+			<td id="linha1">MENOR QUE 18,5</td>
+			<td id="linha2">MAGREZA</td>
+			<td id="linha3">0</td>
+		</tr>
+		<tr>
+			<td id="linha4">ENTRE 18,5 E 24,9</td>
+			<td id="linha5">NORMAL</td>
+			<td id="linha6">0</td>
+		</tr>
+		<tr>
+			<td id="linha7">ENTRE 25,0 E 29,9</td>
+			<td id="linha8">SOBREPESO</td>
+			<td id="linha9">I</td>
+		</tr>
+		<tr>
+			<td id="linha10">ENTRE 30,0 E 39,9	</td>
+			<td id="linha11">OBESIDADE</td>
+			<td id="linha12">II</td>
+		</tr>
+		<tr>
+			<td id="linha13">MAIOR QUE 40,0</td>
+			<td id="linha14">OBESIDADE GRAVE</td>
+			<td id="linha15">III</td>
+		</tr>
+	</table>
+
+	<p class="text-justify font-italic pt-3"> Você sabia que o <b>sobrepeso</b> é uma condição na qual uma pessoa tem um acúmulo excessivo de gordura corporal, o que pode levar a problemas de saúde significativos? Para prevenir ou tratar o <b>sobrepeso</b>, é importante seguir uma dieta saudável e equilibrada e praticar <b>atividades físicas</b> regularmente. Logo abaixo temos alguns exemplos de atividades para você se inspirar e mudar de vida! Mas, <b>você sabe o que é uma atividade física</b>?</p> 
+
+		</div> <!-- fim container -->	
+
+		<div class="container"> <!-- inicio container -->
+			<div class="row"> <!-- inicio row -->
+				<div class="col-sm-12"> <!-- inicio conteudo texto -->	
+					<!-- <img class="img-fluid rounded pt-3" src="imagens/fundo.jpg" > -->
+						<section class="caixa col-md-12 col-lg-12 col-xl-12 rounded">
+							<h1 class="display-4 d-flex justify-content-center "> Atividades fisícas </h1>
+						<p class="text-justify font-weight-light">As atividades físicas são importantes para manter o corpo saudável e em forma, além de trazer diversos benefícios para a saúde física e mental. Existem diversas opções de atividades físicas, desde exercícios aeróbicos até musculação e esportes. Independentemente da escolha da atividade física, é importante lembrar que é necessário fazer um aquecimento adequado antes de começar a se exercitar, além de respeitar os limites do próprio corpo e sempre buscar orientação de um profissional de educação física.</p>
+						</section>
+					</div> <!-- fim conteudo texto -->
+				</div> <!-- fim row -->
+
+
+			<section>
+			<div class="container pt-3"> <!-- início container -->
+					
+
+				<div class="row caixa"> <!-- início row -->
+					
+					<div class="col-lg-6 col-xl-6 rounded"> <!--início flex --> 
+						<img class="img-fluid d-none d-lg-block rounded" src ="imagens/caminhar.jpg" width="400">
+					</div>
+
+					<div class="col-md-12 col-lg-6 col-xl-6 align-self-center">
+						<h2 class="display-4 pb-3"> Caminhar </h2>
+						<p class="text-justify font-weight-light">Caminhar é uma atividade física de baixo impacto que pode ser praticada por pessoas de todas as idades e condições físicas. É uma forma simples e acessível de exercitar o corpo e trazer benefícios para a saúde física e mental.
+
+						Entre os benefícios da caminhada estão o fortalecimento dos músculos das pernas, o aumento da capacidade cardiovascular e pulmonar, a redução do risco de doenças crônicas, como diabetes e doenças cardíacas, e a melhoria do humor e do bem-estar emocional.
+
+						Além disso, a caminhada é uma atividade que pode ser praticada em diferentes ambientes, como parques, ruas e trilhas, proporcionando um contato maior com a natureza e a possibilidade de socialização com outras pessoas.
+						</p>
+
+					</div>
+
+				</div>
+
+				<div class="row caixa"> <!-- início row -->
+					
+					<div class="col-lg-6 col-xl-6 rounded"> <!--início flex --> 
+						<img class="img-fluid d-none d-lg-block rounded" src ="https://conteudo.imguol.com.br/c/entretenimento/bf/2019/02/27/corrida-subida-montanha-1551295317604_v2_450x600.jpg" width="400">
+					</div>
+
+					<div class="col-md-12 col-lg-6 col-xl-6 align-self-center">
+						<h2 class="display-4 pb-3"> Correr </h2>
+						<p class="text-justify font-weight-light">Correr é uma atividade física popular e acessível que traz diversos benefícios para a saúde física e mental. É uma forma eficiente de melhorar a resistência cardiovascular, queimar calorias e manter um peso saudável. Além disso, correr também ajuda a fortalecer os músculos das pernas, melhorar a circulação sanguínea, reduzir o risco de doenças crônicas, como diabetes e doenças cardíacas, e aumentar a produção de endorfinas, hormônios responsáveis pela sensação de bem-estar.
+						No entanto, é importante lembrar que a corrida é uma atividade de alto impacto e pode causar lesões se não for praticada corretamente. Por isso, é essencial fazer um aquecimento adequado antes de começar a correr e respeitar os limites do próprio corpo. O uso de calçados apropriados e a escolha de superfícies adequadas também são importantes para evitar lesões.
+
+					</p>
+
+					</div>
+
+				</div>
+
+				<div class="row caixa"> <!-- início row -->
+					
+					<div class=" col-lg-6 col-xl-6 rounded"> <!--início flex --> 
+						<img class="img-fluid d-none d-lg-block rounded" src ="imagens/musculacao.jpg" width="400">
+					</div>
+
+					<div class="col-md-12 col-lg-6 col-xl-6 align-self-center">
+						<h2 class="display-4 pb-3"> Musculação </h2>
+						<p class="text-justify font-weight-light">A musculação é uma atividade física que consiste em trabalhar os músculos do corpo utilizando pesos livres ou máquinas de musculação. É uma forma eficiente de melhorar a força muscular, a resistência e a composição corporal.
+
+						Entre os benefícios da musculação estão o aumento da massa muscular, a melhoria da densidade óssea, a redução do risco de lesões, o aumento do metabolismo e a melhoria da postura e da estabilidade articular.
+
+						Para obter os benefícios da musculação, é importante seguir um treinamento adequado, com a orientação de um profissional de educação física, que pode indicar os exercícios e pesos adequados para cada pessoa, levando em consideração a idade, o sexo, o peso, a altura e os objetivos individuais. </p>
+
+					</div>
+
+				</div>
+
+				<div class="row caixa"> <!-- início row -->
+					
+					<div class="col-lg-6 col-xl-6 rounded"> <!--início flex --> 
+						<img class="img-fluid d-none d-lg-block rounded" src ="imagens/dancar.jpg" width="400">
+					</div>
+
+					<div class="col-md-12 col-lg-6 col-xl-6 align-self-center">
+						<h2 class="display-4 pb-3"> Dança </h2>
+						<p class="text-justify font-weight-light">A dança é uma atividade física que envolve movimentos rítmicos e coreografados, podendo ser praticada individualmente ou em grupo. É uma forma divertida e agradável de exercitar o corpo e trazer benefícios para a saúde física e mental.
+
+						Entre os benefícios da dança estão o aumento da flexibilidade, da coordenação motora, do equilíbrio e da resistência muscular, além de proporcionar uma melhoria na autoestima, na autoexpressão e no bem-estar emocional.
+
+						A dança pode ser praticada em diferentes estilos, como salsa, samba, forró, balé, hip hop, entre outros, cada um com características e ritmos diferentes, o que possibilita uma variedade de opções para quem deseja praticar.
+
+						Para obter os benefícios da dança, é recomendado praticá-la regularmente, pelo menos 30 minutos por dia, três vezes por semana, sendo que a intensidade e duração do exercício podem ser ajustados de acordo com o nível de condicionamento físico de cada pessoa. </p>
+
+					</div>
+
+				</div>	
+
+		</div> <!-- fim container -->
+		</section>
+
+		<div class="container">
+		<footer class="d-flex flex-wrap justify-content-between align-itens-center">
+			<div class="col-md-4 d-flex align-itens-center pt-3">
+				<a href="" class="navbar-brand text-dark">LUCAS</a>
+			</div>
+
+
+				<ul class="nav col-md-4 justify-content-end d-flex pt-3 pb-3">
+					<li class="pr-2">
+				<a href="https://www.instagram.com/luuskaaa10/" class="btn btn-success border-success" target="_blank">
+		        <i class="bi bi-instagram"></i>
+		     </a>
+		   </li>
+		   <li class="pr-2">
+		     <a href="https://www.linkedin.com/in/lucas-santos-7a154225b/" class="btn btn-success border-success" target="_blank">
+		       	<i class="bi bi-linkedin"></i>
+		      </a>
+		    </li>
+		    <li class="pr-2">
+		       <a href="https://github.com/SilvaSantos10" class="btn btn-success border border-success" target="_blank">
+		          <i class="bi bi-github"></i>
+		       </a>
+		     </li>
+		    </ul>
+		    </footer>
+			</div>
+					
+</body>
+</html>
