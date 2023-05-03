@@ -1,6 +1,6 @@
 ﻿#apresentacao
  
-Esse portfólio tem como objetivo apresentar os projetos que foram desenvolvidos por mim, através das tecnologias HTML, CSS, JAVASCRIPT e BOOTSTRAP. Os projetos são: Apresentação pessoal, calculadora básica, calculadora imc e jogo mata barato. A apresentação pessoal nada mais é do que um currículo, onde apresento os meus conhecimentos que adquiri até o momento, juntamente com a minha escolaridade, objetivos profissionais e etc. No mesmo projeto, na aba "Meus projetos" se encontram os trabalhos que foram citados a cima. (Apresentação pessoal, calculadora básica, calculadora imc e jogo mata barata.)
+Esse portfólio tem como objetivo apresentar os projetos que foram desenvolvidos por mim, através das tecnologias HTML, CSS, JAVASCRIPT e BOOTSTRAP. Os projetos são: Apresentação pessoal, calculadora básica, calculadora imc e jogo mata barata. A apresentação pessoal nada mais é do que um currículo, onde apresento os meus conhecimentos que adquiri até o momento, juntamente com a minha escolaridade, objetivos profissionais e etc. No mesmo projeto, na aba "Meus projetos" se encontram os trabalhos que foram citados a cima. (Apresentação pessoal, calculadora básica, calculadora imc e jogo mata barata.)
 
 Calculadora básica: Realiza operações de soma, subtração, divisão e multiplicação (Feita com Html, Css, Bootstrap e JavaScript).
 
