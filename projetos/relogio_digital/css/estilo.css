@@ -1,0 +1,70 @@
+.medidasRelogio{
+    margin-top: 200px;
+    width: 600px;
+    height: 300px;
+}
+.fonte{
+    font-size: 110px; 
+    color: #ff0000;
+    opacity: 0.8;
+}
+
+.pontos{
+    font-size: 110px;
+    color: red;
+    opacity: 0.8;
+}
+
+.diasMesesAnos{
+    color: white;
+    opacity: 0.8;
+    font-size: 20px;
+}
+
+
+@font-face{
+    font-family: Digital;
+
+    /*Caso a fonte esteja na mesma pasta*/
+    src: url(../digital-7.mono.ttf);
+}
+
+body{
+    font-family: Digital;
+}
+
+.fundoTrocaDia{
+    background-image: url('https://pa1.narvii.com/6337/b00754e80b70aeb4a53d930ff0b491cacbe33bfb_hq.gif'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    height: 730px;
+}
+
+.fundoTrocaTarde{
+    background-image: url('https://i.pinimg.com/originals/75/7a/4e/757a4ed3d9e6fdf7dcbbad972bd2e72c.gif'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: white;
+    height: 730px;
+
+}
+
+.fundoTrocaNoite{
+    background-image: url('https://i.pinimg.com/originals/5f/08/58/5f085809f2b711643e4eb4974cc03c0e.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+    height: 730px;
+    
+    
+
+}
+
+/*.bg-primary {
+    background-color: black!important;
+}*/
+
