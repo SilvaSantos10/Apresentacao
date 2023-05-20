@@ -54,12 +54,22 @@
 	manipulacao1 = document.getElementById('manipulacao1').value;
 	
 	if (manipulacao0 == '' || manipulacao1 == '') {
-			alert('Preencha corretamente os campos de login e senha!');
-			document.getElementById('manipulacao0').className = ''
-			document.getElementById('manipulacao1').className = ''
+		$('#modalLogin').modal('show')
+		document.getElementById(`modalTitulo`).innerHTML = `Erro`
+		document.getElementById(`modalTitulo`).className = `text-danger`
+		document.getElementById(`modalMensagem`).innerHTML = `Login ou senha estão incorretos`
+		document.getElementById(`modalBotao`).innerHTML = `Voltar e preencher`
+		document.getElementById(`modalBotao`).className = `btn btn-danger`
+		document.getElementById('manipulacao0').className = ''
+		document.getElementById('manipulacao1').className = ''
 
 	} else if (manipulacao0 == 'Lucas' && manipulacao1 == '123456') {
-		alert('Login realizado com sucesso. Bem vindo Lucas!')
+		$('#modalLogin').modal('show')
+		document.getElementById(`modalTitulo`).innerHTML = `Bem-Vindo`
+		document.getElementById(`modalTitulo`).className = `text-success`
+		document.getElementById(`modalMensagem`).innerHTML = `Login realizado com sucesso. Bem vindo Lucas!`
+		document.getElementById(`modalBotao`).innerHTML = `Voltar`
+		document.getElementById(`modalBotao`).className = `btn btn-success`
 		document.getElementById('manipulacao0').value = ''
 		document.getElementById('manipulacao1').value = ''
 		document.getElementById('manipulacao0').className = ''
@@ -147,6 +157,27 @@
 	</div>
 
 	</div> <!-- fim row -->
-</div> <!-- fim container -->				
+</div> <!-- fim container -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="modalTitulo"></h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div id="modalMensagem" class="modal-body">
+		  
+		</div>
+		<div class="modal-footer">
+		  <button id="modalBotao" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+		  
+		</div>
+	  </div>
+	</div>
+  </div>
 </body>
 </html>
