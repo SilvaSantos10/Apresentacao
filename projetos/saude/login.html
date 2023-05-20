@@ -57,7 +57,7 @@
 		$('#modalLogin').modal('show')
 		document.getElementById(`modalTitulo`).innerHTML = `Erro`
 		document.getElementById(`modalTitulo`).className = `text-danger`
-		document.getElementById(`modalMensagem`).innerHTML = `Login ou senha estão incorretos`
+		document.getElementById(`modalMensagem`).innerHTML = `Preencha os campos em branco`
 		document.getElementById(`modalBotao`).innerHTML = `Voltar e preencher`
 		document.getElementById(`modalBotao`).className = `btn btn-danger`
 		document.getElementById('manipulacao0').className = ''
@@ -77,7 +77,12 @@
 		}
 
 		else {
-		      alert('Login ou senha incorretos')
+			$('#modalLogin').modal('show')
+			document.getElementById(`modalTitulo`).innerHTML = `Erro`
+			document.getElementById(`modalTitulo`).className = `text-danger`
+			document.getElementById(`modalMensagem`).innerHTML = `Login ou senha incorretos`
+			document.getElementById(`modalBotao`).innerHTML = `Voltar e preencher`
+			document.getElementById(`modalBotao`).className = `btn btn-danger`
 			document.getElementById('manipulacao1').value = ''
 			document.getElementById('manipulacao0').className = ''
 			document.getElementById('manipulacao1').className = ''
