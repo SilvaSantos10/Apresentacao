@@ -71,7 +71,7 @@
 			 altura = parseFloat(document.getElementById("altura").value);
 
 			if (isNaN(peso) || nome == '' || isNaN(altura)) {
-				alert("Preencha corretamente os campos de peso, nome e altura!");
+				$('#modalRegistroIMC').modal('show')
 			} else {
 
 				altura = altura / 100;
@@ -200,6 +200,27 @@
   				<input class="resultado1 border border-primary bg-warning rounded ml-2" type="text" name="" id="resultado" disabled="disabled">
   				
 		</form> <!-- fim form -->
+
+		<!-- Modal -->
+		<div class="modal fade" id="modalRegistroIMC" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header text-danger">
+				<h5 class="modal-title" id="exampleModalLabel">Erro!</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+				Preencha todos os campos antes de realizar os cálculos!
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Volar e preencher</button>
+				
+				</div>
+			</div>
+			</div>
+		</div>
 
 	</div>
 	
