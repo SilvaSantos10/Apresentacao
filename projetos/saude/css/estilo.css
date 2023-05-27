@@ -22,6 +22,12 @@
 	border-color: rgba(156, 255, 255, 0.9) !important;
 }
 
+.bordaP {
+	border-bottom: 1px solid ;
+	border-color: rgba(156, 255, 255, 0.9) !important;
+
+}
+
 
 /*----------LOGIN---------*/
 

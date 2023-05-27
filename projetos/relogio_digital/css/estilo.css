@@ -34,7 +34,7 @@ body{
 }
 
 .fundoTrocaDia{
-    background-image: url('https://pa1.narvii.com/6337/b00754e80b70aeb4a53d930ff0b491cacbe33bfb_hq.gif'); 
+    background-image: url(../imagens/manha.gif); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -43,7 +43,7 @@ body{
 }
 
 .fundoTrocaTarde{
-    background-image: url('https://i.pinimg.com/originals/75/7a/4e/757a4ed3d9e6fdf7dcbbad972bd2e72c.gif'); 
+    background-image: url(../imagens/tarde.gif); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -53,7 +53,7 @@ body{
 }
 
 .fundoTrocaNoite{
-    background-image: url('https://i.pinimg.com/originals/5f/08/58/5f085809f2b711643e4eb4974cc03c0e.gif');
+    background-image: url(../imagens/noite.gif);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
