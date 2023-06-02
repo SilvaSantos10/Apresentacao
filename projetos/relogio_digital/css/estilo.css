@@ -1,16 +1,16 @@
 .medidasRelogio{
-    margin-top: 200px;
+    margin-top: 300px;
     width: 600px;
     height: 300px;
 }
 .fonte{
-    font-size: 110px; 
+    font-size: 100px; 
     color: #ff0000;
     opacity: 0.8;
 }
 
 .pontos{
-    font-size: 110px;
+    font-size: 100px;
     color: red;
     opacity: 0.8;
 }
